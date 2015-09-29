@@ -76,11 +76,11 @@ namespace SGEnviro.Forecasts
 
             return new Pm25RegionalUpdate
             {
-                Region=ourRegion,
-                Reading=readingValue,
-                Latitude=latitude,
-                Longitude=longitude,
-                Timestamp=new DateTime(year, month, day, hour, minute, second)
+                Region = ourRegion,
+                Reading = readingValue,
+                Latitude = latitude,
+                Longitude = longitude,
+                Timestamp = new DateTime(year, month, day, hour, minute, second)
             };
         }
     }
