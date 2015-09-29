@@ -11,7 +11,7 @@
         Undefined
     }
 
-    public class RegionUtils
+    public static class RegionUtils
     {
         public static Region Parse(string xmlValue)
         {
@@ -32,7 +32,6 @@
                 default:
                     return Region.Undefined;
             }
-
         }
     }
 }
