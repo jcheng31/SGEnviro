@@ -41,37 +41,37 @@ namespace SGEnviro.Forecasts
                                   where (string)element.Attribute("type") == XML_PM25_READING_TYPE
                                   select element).First();
             float readingValue;
-            NumberParsing.ParseFloatOrThrowException(readingElement.Attribute("value").Value, out readingValue, PARSE_PM25_ERROR);
+            NumberParser.ParseFloatOrThrowException(readingElement.Attribute("value").Value, out readingValue, PARSE_PM25_ERROR);
 
             float latitude;
-            NumberParsing.ParseFloatOrThrowException(region.Element("latitude").Value, out latitude, PARSE_LATITUDE_ERROR);
+            NumberParser.ParseFloatOrThrowException(region.Element("latitude").Value, out latitude, PARSE_LATITUDE_ERROR);
 
             float longitude;
-            NumberParsing.ParseFloatOrThrowException(region.Element("longitude").Value, out longitude, PARSE_LONGITUDE_ERROR);
+            NumberParser.ParseFloatOrThrowException(region.Element("longitude").Value, out longitude, PARSE_LONGITUDE_ERROR);
 
             var rawTimestamp = region.Element("record").Attribute("timestamp").Value;
             int year;
-            NumberParsing.ParseIntOrThrowException(rawTimestamp.Substring(0, YEAR_LENGTH), out year, PARSE_YEAR_ERROR);
+            NumberParser.ParseIntOrThrowException(rawTimestamp.Substring(0, YEAR_LENGTH), out year, PARSE_YEAR_ERROR);
 
             int month;
             const int monthStartPosition = YEAR_LENGTH;
-            NumberParsing.ParseIntOrThrowException(rawTimestamp.Substring(monthStartPosition, MONTH_LENGTH), out month, PARSE_MONTH_ERROR);
+            NumberParser.ParseIntOrThrowException(rawTimestamp.Substring(monthStartPosition, MONTH_LENGTH), out month, PARSE_MONTH_ERROR);
 
             int day;
             const int dayStartPosition = YEAR_LENGTH + MONTH_LENGTH;
-            NumberParsing.ParseIntOrThrowException(rawTimestamp.Substring(dayStartPosition, DAY_LENGTH), out day, PARSE_DAY_ERROR);
+            NumberParser.ParseIntOrThrowException(rawTimestamp.Substring(dayStartPosition, DAY_LENGTH), out day, PARSE_DAY_ERROR);
 
             int hour;
             const int hourStartPosition = YEAR_LENGTH + MONTH_LENGTH + DAY_LENGTH;
-            NumberParsing.ParseIntOrThrowException(rawTimestamp.Substring(hourStartPosition, HOUR_LENGTH), out hour, PARSE_HOUR_ERROR);
+            NumberParser.ParseIntOrThrowException(rawTimestamp.Substring(hourStartPosition, HOUR_LENGTH), out hour, PARSE_HOUR_ERROR);
 
             int minute;
             const int minuteStartPosition = YEAR_LENGTH + MONTH_LENGTH + DAY_LENGTH + HOUR_LENGTH;
-            NumberParsing.ParseIntOrThrowException(rawTimestamp.Substring(minuteStartPosition, MINUTE_LENGTH), out minute, PARSE_MINUTE_ERROR);
+            NumberParser.ParseIntOrThrowException(rawTimestamp.Substring(minuteStartPosition, MINUTE_LENGTH), out minute, PARSE_MINUTE_ERROR);
 
             int second;
             const int secondStartPosition = YEAR_LENGTH + MONTH_LENGTH + DAY_LENGTH + HOUR_LENGTH + MINUTE_LENGTH;
-            NumberParsing.ParseIntOrThrowException(rawTimestamp.Substring(secondStartPosition, SECOND_LENGTH), out second, PARSE_SECOND_ERROR);
+            NumberParser.ParseIntOrThrowException(rawTimestamp.Substring(secondStartPosition, SECOND_LENGTH), out second, PARSE_SECOND_ERROR);
             
 
             return new Pm25RegionalUpdate
