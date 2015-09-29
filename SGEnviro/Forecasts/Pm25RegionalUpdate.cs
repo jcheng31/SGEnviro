@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace SGEnviro.Forecasts
 {
@@ -19,5 +20,10 @@ namespace SGEnviro.Forecasts
 
         public DateTime Timestamp { get; set; }
         public float Reading { get; set; }
+
+        public static Pm25RegionalUpdate FromXElement(XElement region)
+        {
+            return new Pm25RegionalUpdate();
+        }
     }
 }
