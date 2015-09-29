@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -14,7 +15,7 @@ namespace SGEnviro.Utilities
     {
         public static void ParseFloatOrThrowException(string value, out float destination, string message)
         {
-            if (!float.TryParse(value, out destination))
+            if (!float.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out destination))
             {
                 throw new Exception(message);
             }
