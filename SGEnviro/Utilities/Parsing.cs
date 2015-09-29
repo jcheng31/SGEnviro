@@ -17,7 +17,15 @@ namespace SGEnviro.Utilities
         {
             if (!float.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out destination))
             {
-                throw new Exception(message);
+                throw new NumberParseException(message);
+            }
+        }
+
+        public static void ParseIntOrThrowException(string value, out int destination, string message)
+        {
+            if (!int.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out destination))
+            {
+                throw new NumberParseException(message);
             }
         }
     }
