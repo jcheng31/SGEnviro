@@ -5,16 +5,6 @@ using SGEnviro.Utilities;
 
 namespace SGEnviro.Forecasts
 {
-    public enum Region
-    {
-        Central,
-        East,
-        North,
-        South,
-        West,
-        Undefined
-    }
-
     public class Pm25RegionalUpdate
     {
         private const string PARSE_PM25_ERROR = "Couldn't parse PM2.5 value.";
@@ -45,25 +35,7 @@ namespace SGEnviro.Forecasts
 
         public static Pm25RegionalUpdate FromXElement(XElement region)
         {
-            Region ourRegion = Region.Undefined;
-            switch(region.Element("id").Value)
-            {
-                case "rNO":
-                    ourRegion = Region.North;
-                    break;
-                case "rCE":
-                    ourRegion = Region.Central;
-                    break;
-                case "rEA":
-                    ourRegion = Region.East;
-                    break;
-                case "rWE":
-                    ourRegion = Region.West;
-                    break;
-                case "rSO":
-                    ourRegion = Region.South;
-                    break;
-            }
+            Region ourRegion = RegionUtils.Parse(region.Element("id").Value);
 
             var readingElement = (from element in region.Descendants("reading")
                                   where (string)element.Attribute("type") == XML_PM25_READING_TYPE
