@@ -58,6 +58,7 @@
     <Compile Include="Pm25UpdateTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsiRegionalTest.cs" />
+    <Compile Include="PsiUpdateTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
