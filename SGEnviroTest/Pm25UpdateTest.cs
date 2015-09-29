@@ -62,7 +62,6 @@ namespace SGEnviroTest
 
             var actual = Pm25Update.FromXElement(element);
             Assert.IsNotNull(actual);
-            Assert.IsNotNull(actual.North);
             Assert.AreEqual(actual.North.Region, Region.North);
             Assert.AreEqual(actual.South.Region, Region.South);
             Assert.AreEqual(actual.East.Region, Region.East);
