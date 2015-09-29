@@ -9,7 +9,7 @@ namespace SGEnviroTest
     public class Pm25RegionalTest
     {
         [TestMethod]
-        public void TestInitialization()
+        public void TestPm25RegionalDirectInit()
         {
             var elementText = @"<region>
                                     <id>rNO</id>
