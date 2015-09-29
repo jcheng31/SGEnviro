@@ -33,7 +33,7 @@ namespace SGEnviroTest
             Assert.IsNotNull(actual);
             Assert.AreEqual(expectedLatitude, actual.Latitude, delta);
             Assert.AreEqual(expectedLongitude, actual.Longitude, delta);
-            Assert.AreEqual(expectedTimestamp, actual.Timestamp);
+            Assert.AreEqual(expectedTimestamp, actual.TimeStamp);
             Assert.AreEqual(expectedReading, actual.Reading);
             Assert.AreEqual(expectedRegion, actual.Region);
         }

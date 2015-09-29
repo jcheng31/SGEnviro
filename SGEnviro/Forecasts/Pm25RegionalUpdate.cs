@@ -30,7 +30,7 @@ namespace SGEnviro.Forecasts
         public float Latitude { get; set; }
         public float Longitude { get; set; }
 
-        public DateTime Timestamp { get; set; }
+        public DateTime TimeStamp { get; set; }
         public float Reading { get; set; }
 
         public static Pm25RegionalUpdate FromXElement(XElement region)
