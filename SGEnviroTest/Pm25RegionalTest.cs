@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SGEnviro;
 using SGEnviro.Forecasts;
 
 namespace SGEnviroTest
