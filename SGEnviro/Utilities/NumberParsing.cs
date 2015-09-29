@@ -11,7 +11,7 @@ namespace SGEnviro.Utilities
         public NumberParseException(string message) { }
     }
 
-    public class Parsing
+    public class NumberParsing
     {
         public static void ParseFloatOrThrowException(string value, out float destination, string message)
         {
