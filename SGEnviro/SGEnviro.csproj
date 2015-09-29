@@ -42,6 +42,7 @@
     <Compile Include="Forecasts\Pm25Update.cs" />
     <Compile Include="Forecasts\Region.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DateParser.cs" />
     <Compile Include="Utilities\NumberParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
