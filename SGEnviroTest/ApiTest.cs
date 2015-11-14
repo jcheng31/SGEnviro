@@ -21,10 +21,10 @@ namespace SGEnviroTest
         }
 
         [TestMethod]
-        public void TestApiCanRetrieve()
+        public async Task TestApiCanRetrieve()
         {
             var api = new SGEnviroApi(apiKey);
-            var result = api.GetPsiUpdateAsync().Result;
+            var result = await api.GetPsiUpdateAsync();
             Assert.IsNotNull(result);
         }
     }
