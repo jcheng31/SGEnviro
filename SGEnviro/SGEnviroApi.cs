@@ -20,6 +20,7 @@ namespace SGEnviro
         private const string ApiUrl = "http://www.nea.gov.sg/api/WebAPI/?dataset={0}&keyref={1}";
 
         private const string PsiDataset = "psi_update";
+        private const string Pm25Dataset = "pm2.5_update";
 
         private readonly string apiKey;
 
@@ -80,6 +81,11 @@ namespace SGEnviro
                 var parsedXml = XElement.Parse(await response.Content.ReadAsStringAsync());
                 return factory(parsedXml);
             }
+        }
+
+        public async Task<Pm25Update> GetPm25UpdateAsync()
+        {
+            return (Pm25Update) await GetDatasetAsync(Pm25Dataset, Pm25Update.FromXElement);
         }
     }
 }

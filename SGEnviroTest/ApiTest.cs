@@ -27,5 +27,13 @@ namespace SGEnviroTest
             var result = await api.GetPsiUpdateAsync();
             Assert.IsNotNull(result);
         }
+
+        [TestMethod]
+        public async Task TestApiCanRetrievePm25Update()
+        {
+            var api = new SGEnviroApi(apiKey);
+            var result = await api.GetPm25UpdateAsync();
+            Assert.IsNotNull(result);
+        }
     }
 }
