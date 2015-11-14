@@ -21,7 +21,7 @@ namespace SGEnviroTest
         }
 
         [TestMethod]
-        public async Task TestApiCanRetrieve()
+        public async Task TestApiCanRetrievePsiUpdate()
         {
             var api = new SGEnviroApi(apiKey);
             var result = await api.GetPsiUpdateAsync();
