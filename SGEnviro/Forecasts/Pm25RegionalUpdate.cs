@@ -20,6 +20,13 @@ namespace SGEnviro.Forecasts
         public DateTime TimeStamp { get; set; }
         public float Reading { get; set; }
 
+        /// <summary>
+        /// Constructs a Pm25RegionalUpdate from an XElement.
+        /// Expects the XElement to be a "region" node in the XML response from
+        /// NEA's PSI API.
+        /// </summary>
+        /// <param name="region"></param>
+        /// <returns></returns>
         public static Pm25RegionalUpdate FromXElement(XElement region)
         {
             Region ourRegion = RegionUtils.Parse(region.Element("id").Value);

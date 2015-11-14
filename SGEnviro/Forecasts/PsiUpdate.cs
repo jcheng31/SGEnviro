@@ -15,6 +15,12 @@ namespace SGEnviro.Forecasts
         public PsiRegionalUpdate South { get; set; }
         public PsiRegionalUpdate West { get; set; }
 
+        /// <summary>
+        /// Constructs a PsiUpdate from an XElement. Expects the XElement to be the root node (channel)
+        /// in NEA's PSI API response.
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <returns></returns>
         public static PsiUpdate FromXElement(XElement channel)
         {
             var regionElements = channel.Descendants("region");

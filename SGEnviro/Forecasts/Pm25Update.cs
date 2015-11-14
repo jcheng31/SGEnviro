@@ -14,6 +14,13 @@ namespace SGEnviro.Forecasts
         public Pm25RegionalUpdate South { get; set; }
         public Pm25RegionalUpdate West { get; set; }
 
+        /// <summary>
+        /// Constructs a Pm25Update from an XElement.
+        /// Expects the XElement to be a "channel" node from NEA's
+        /// PSI API.
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <returns></returns>
         public static Pm25Update FromXElement(XElement channel)
         {
             var regionElements = channel.Descendants("region");
