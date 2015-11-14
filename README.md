@@ -38,7 +38,7 @@ PsiUpdate result = await api.GetPsiUpdateAsync();
 
 The results are broken down per region, and presented with more human-friendly names (compared to those given in the API):
 
-![](http://imgur.com/SHpvLtk)
+![](http://i.imgur.com/SHpvLtk.png)
 
 ### Retrieving 1-hour PM2.5 Readings
 ```C#
@@ -56,7 +56,7 @@ Pm25Update result = await api.GetPm25UpdateAsync();
 
 Just as with 3-hour PSI, results are broken down per region (minus "National", which isn't provided for PM2.5).
 
-![](http://imgur.com/qnm6iqR)
+![](http://i.imgur.com/qnm6iqR.png)
 
 ## Dependencies
     Microsoft.Bcl (1.1.10)
