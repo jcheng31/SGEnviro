@@ -18,7 +18,7 @@ namespace SGEnviro.Forecasts
         public static PsiUpdate FromXElement(XElement channel)
         {
             var regionElements = channel.Descendants("region");
-            var updates = regionElements.Select(x => PsiRegionalUpdate.FromXElement(x));
+            var updates = regionElements.Select(PsiRegionalUpdate.FromXElement);
 
             var update = new PsiUpdate();
             foreach (var regionalUpdate in updates)
