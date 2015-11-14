@@ -52,6 +52,10 @@ namespace SGEnviro
             }
         }
 
+        /// <summary>
+        /// Asynchronously retrieves PSI data.
+        /// </summary>
+        /// <returns>A <see cref="PsiUpdate" /> with the latest available PSI information.</returns>
         public async Task<PsiUpdate> GetPsiUpdateAsync()
         {
             ThrowExceptionIfNoApiKey();
