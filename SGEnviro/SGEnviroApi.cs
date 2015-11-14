@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SGEnviro
 {
-    public class Class1
+    public class SGEnviroApi
     {
     }
 }
