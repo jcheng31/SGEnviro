@@ -24,7 +24,7 @@ namespace SGEnviroTest
         public void TestApiCanRetrieve()
         {
             var api = new SGEnviroApi(apiKey);
-            var result = api.GetPsiDataAsync().Result;
+            var result = api.GetPsiUpdateAsync().Result;
             Assert.IsNotNull(result);
         }
     }
