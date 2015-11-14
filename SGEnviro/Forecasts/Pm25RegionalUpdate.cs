@@ -16,8 +16,11 @@ namespace SGEnviro.Forecasts
         public Region Region { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
-
         public DateTime TimeStamp { get; set; }
+
+        /// <summary>
+        /// 1-hour PM2.5, measured in mu-g/m^3. Corresponds to PM25_RGN_1HR.
+        /// </summary>
         public float Reading { get; set; }
 
         /// <summary>
