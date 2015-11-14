@@ -14,9 +14,12 @@ namespace SGEnviro
     {
         /// <summary>
         /// The URL for the NEA PSI API.
-        /// {0} - The API key.
+        /// {0} - The dataset to use.
+        /// {1} - The API key.
         /// </summary>
-        private const string ApiUrl = "http://www.nea.gov.sg/api/WebAPI/?dataset=psi_update&keyref={0}";
+        private const string ApiUrl = "http://www.nea.gov.sg/api/WebAPI/?dataset={0}&keyref={1}";
+
+        private const string PsiDataset = "psi_update";
 
         private readonly string apiKey;
 
@@ -58,9 +61,14 @@ namespace SGEnviro
         /// <returns>A <see cref="PsiUpdate" /> with the latest available PSI information.</returns>
         public async Task<PsiUpdate> GetPsiUpdateAsync()
         {
+            return (PsiUpdate) await GetDatasetAsync(PsiDataset, PsiUpdate.FromXElement);
+        }
+
+        private async Task<object> GetDatasetAsync(string dataset, Func<XElement, object> factory)
+        {
             ThrowExceptionIfNoApiKey();
 
-            var requestUrl = string.Format(ApiUrl, apiKey);
+            var requestUrl = string.Format(ApiUrl, dataset, apiKey);
 
             var compressionHandler = GetCompressionHandler();
             using (var client = new HttpClient(compressionHandler))
@@ -70,7 +78,7 @@ namespace SGEnviro
                 ThrowExceptionIfResponseError(response);
 
                 var parsedXml = XElement.Parse(await response.Content.ReadAsStringAsync());
-                return PsiUpdate.FromXElement(parsedXml);
+                return factory(parsedXml);
             }
         }
     }
