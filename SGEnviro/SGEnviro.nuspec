@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SGEnviro</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Jerome Cheng</authors>
     <owners>Jerome Cheng</owners>
     <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
@@ -10,8 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A portable class library for Singapore's NEA API.</description>
     <releaseNotes>
-Initial release, supporting the PSI and PM2.5 datasets.
-* 1.0.1: Rebuild using the Release configuration.
+Update NEA API URL.
 	</releaseNotes>
     <copyright />
     <tags>Singapore NEA PSI Haze</tags>
