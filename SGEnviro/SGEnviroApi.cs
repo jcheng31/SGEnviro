@@ -17,7 +17,7 @@ namespace SGEnviro
         /// {0} - The dataset to use.
         /// {1} - The API key.
         /// </summary>
-        private const string ApiUrl = "http://www.nea.gov.sg/api/WebAPI/?dataset={0}&keyref={1}";
+        private const string ApiUrl = "http://api.nea.gov.sg/api/WebAPI/?dataset={0}&keyref={1}";
 
         private const string PsiDataset = "psi_update";
         private const string Pm25Dataset = "pm2.5_update";
